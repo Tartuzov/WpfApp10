@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+        <TextBox MaxHeight="50" Name="tb1" Text="{Binding ElementName=tb2, Mode=OneWay, Path= Text}"></TextBox>
+        <TextBox  Name="tb2" Text="{Binding ElementName=tb1, Mode=OneWay, Path= Text}"></TextBox>
+        <Slider Name="sl1" Value="{Binding ElementName=sl2, Mode=TwoWay, Path= Value}"></Slider>
+        <Slider Name="sl2"></Slider>
+            <StackPanel Orientation="Horizontal" >
+                <TextBox Name="tb3" Margin="10" MinWidth="100"></TextBox>
+                <TextBox Name="tb4" Margin="10" MinWidth="100"></TextBox>
+                <TextBox Name="tb5" Margin="10" MinWidth="100"></TextBox>
+                <ListBox Name="all" Margin="10" MinWidth="300" MinHeight="100"></ListBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Button Margin="10" MinHeight="30" MinWidth="150" HorizontalAlignment="Left" Click="Button_Click">Добавить</Button>
+                <Button Margin="10" MinHeight="30" MinWidth="150" HorizontalAlignment="Left" Click="Button_Click1">Редактировать</Button>
+                <Button Margin="10" MinHeight="30" MinWidth="150" HorizontalAlignment="Left" Click="Button_Click2">Удалить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
